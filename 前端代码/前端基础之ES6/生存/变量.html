@@ -8,19 +8,91 @@
         // let a=1;
         // const b=1;
         // var c=1;
-        function f(){
-            // let a=1;
-            // const b=2;
-            var c=3;
-        }
+        // function f(){
+        //     // let a=1;
+        //     // const b=2;
+        //     var c=3;
+        // }
             // console.log(a);
             // console.log(b);
-            console.log(c);
-        f();
+            // console.log(c);
+        // f();
+            
+        //array数组
+        // let arr=[1,2,3];
+        // arr.push(4);
+        // console.log(arr)
+        // arr.unshift(5);
+        // console.log(arr)
+        // arr.pop();
+        // console.log(arr)
+        // a=arr.shift();
+        // console.log(a);
+        // // arr.push(4);
+        // arr.splice(0,0,23,34);
+        // console.log('arr:',arr);
+        
+        // arr1=arr.concat(222);
+        // console.log('concat的arr1:',arr1);
+      
+
+        // arr2=arr1.slice(1,)
+        // console.log('slice的arr2:',arr2);
+
+        // arr.forEach(a=>console.log(a*2));
+
+        // arr.map(a=>a*2);
+        // console.log(arr);
+        // let evens = arr.filter(num => num % 2 === 0);
+        // console.log(evens);
+
+        // console.log(arr.some(num => num ===1));
+        // c=arr.includes(3);
+        // console.log(c);
+        
+        // console.log(arr.join('-'));
+        
+        // console.log(arr.find(a=>a>1));
+       
+        // console.log(arr.findIndex(a=>a>1));
+        
+        // console.log(arr.every(a=>a>1));
+
+        //object对象
+        // obj1={name:'张三',age:12,sex:'男'};
+        // // let obj2=new Object();
+        // console.log(obj1);
+        // // console.log(obj2);
+
+
+        // //增删改查
+        // obj1.school='中大';
+        // console.log(obj1);
+       
+        // delete obj1.school;
+        // console.log(obj1);
+       
+
+        // console.log( Object.keys(obj1));
+        // console.log( Object.values(obj1));
+        // console.log( Object.entries(obj1));
+
+        //map和set对象
+        let map=new Map();
+        let set1=new Set();
+        map.set('name','张三');
+        set1.add([1,2,3,3]);
+        console.log(map);
+        console.log(set1);
+       
+       
+       
+
+
     </script>
 </head>
 <body>
-    <h1>变量以及数据类型</h1>
+    <h1>一、变量以及声明方式</h1>
     //let,const,var的区别
     <p>JavaScript中有三种声明变量的方式：let、const和var。它们之间的主要区别如下：</p>
     <ul>
@@ -28,7 +100,50 @@
         <li><strong>const</strong>：用于声明块级作用域的常量，必须在声明时初始化，且不能被重新赋值或重复声明。</li>
         <li><strong>var</strong>：用于声明函数级作用域的变量，可以被重新赋值和重复声明，但存在变量提升的问题。</li>
     </ul>
-    
-
+    <h1>二、基础/原始数据类型</h1>
+        <p>undefined、null、number、bigint、boolean、string、symbol</p>
+    <h1>三、引用数据类型</h1>
+    <ol>
+        <p>常见的几种可以根据是否支持字面量语法糖，分为两类</p>
+        <h2>支持字面量语法糖</h2>
+       
+        <li>bject对象字面量： {}
+            <p>定义方式：</p>
+            <p>let obj={name:"zhangsan",age:18}</p>
+            <p>等价于let obj=new Object();obj.name="zhangsan";obj.age=18</p>
+        </li>
+        <li>Array数组字面量：[]
+            <p>定义方式：</p>
+            <p>let arr=[1,2,3]</p>
+            <p>等价于let arr=new Array();arr.name="zhangsan";obj.age=18</p>
+        </li>
+        <li>字符串字面量： '' or "" (虽然字符串是原始类型，但有时也会被当作对象使用)
+            <p>定义方式：</p>
+            <p>let obj={name:"zhangsan",age:18}</p>
+            <p>等价于let obj=new Object();obj.name="zhangsan";obj.age=18</p>
+        </li>
+        <li>正则表达式字面量：//
+            <p>定义方式：</p>
+            <p>let regex = /ab+c/;</p>
+            <p>等价于let regex=new regex();regex.="zhangsan";obj.age=18</p>
+        </li>
+        <h2>不支持字面量语法糖</h2>
+        <li>Set</li>
+        <li>Map</li>
+        <li>Array以其其他</li>
+        <P>声明方式都是类似let something=new set()</P>
+    </ol>
+    <h1>四、引用数据类型的使用方法</h1>
+    <ol>
+        <li>Array</li>
+        <p>
+            push,unshift,pop,shift,splice,slice,find,findindex,some,evrey
+            foreach,map,fliter
+        </p>
+        <li>Array</li>
+        <li>Array</li>
+        <li>Array</li>
+        <li>Array</li>
+    </ol>
 </body>
 </html>
