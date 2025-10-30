@@ -77,13 +77,57 @@
         // console.log( Object.values(obj1));
         // console.log( Object.entries(obj1));
 
-        //map和set对象
-        let map=new Map();
-        let set1=new Set();
-        map.set('name','张三');
-        set1.add([1,2,3,3]);
-        console.log(map);
-        console.log(set1);
+        // //map和set对象
+        // let map=new Map();
+        // let set1=new Set();
+
+        // //map增删改查
+        // map.set('name','张三');
+        // map.set('age',18);
+        // map.set('height',180);  
+        
+        // console.log(map.has('age'));
+        // console.log(map.get('age'));
+        // console.log(map.size);
+
+        // // map.delete('age');
+        // // map.clear();
+
+        // console.log(map.keys());
+        // console.log(map.values());
+        // console.log(map.entries());
+        // //map遍历，映射，过滤
+        // map.forEach((k,v)=>console.log(k,v));
+
+        // //set增删改查
+        // set1.add(1);
+        // set1.add(2);
+        // set1.add(3);
+
+        // set1.delete(2);
+
+        // console.log(set1.has(2));
+        // console.log(set1.size);
+        
+
+        // console.log(set1.keys());
+        // console.log(set1.values());
+        // console.log(set1.entries());
+
+        // //set遍历，映射，过滤
+        // set1.forEach(k=>console.log(k));
+        
+  
+        //function对象
+        function f(a,b){
+            console.log(`你是${a}，今年${this.name}${b}岁了`);
+        }
+        let c={name:'张三'};
+        f.call(c,'张四',18);
+        f.apply(c,['张三',18]);
+        let f1=f.bind(c,'张三',18);
+        f1();
+
        
        
        

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数与类</title>
+    <script>
+        //函数
+        //函数的定义与调用
+        function f(a,b){
+            console.log(`你是${a}，今年${this.nam}${b}岁了`);
+        }
+        let fun=f('小明',18);
+        let obj={nam:'小红'};
+        f.call(obj,'小明',18);
+        f.apply(obj,['小明',18]);
+        let fun1=f.bind(obj,'小明',18);
+        fun1();
+
+        //函数表达式
+        const f4=function(a,b,c){
+            return a+b+c;
+        }
+        console.log(f4(1,2,3));
+
+        //箭头函数是函数表达式的一种简写形式，等价于Lambda表达式
+        const f1=(a)=>{
+            console.log(a);
+            return a*2;
+        }
+        f1(3);
+        const f2=a=>a*2;
+        console.log(f2(4));
+
+        //函数的默认值
+        function f3(a,b){
+            console.log(a+b);
+        }
+        f3();
+        f3(3,4);
+
+        
+
+        //类
+        class Person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            sayHello(){
+                console.log(`你好，我是${this.name}，今年${this.age}岁了`);
+            }
+        }
+        let per=new Person('小明',18);
+        per.sayHello();
+        class Man extends Person{
+            constructor(name,age,sex){
+                super(name,age);
+                this.sex=sex;
+                
+            }
+            sayHello(){
+                console.log(`你好，我是${this.name}，今年${this.age}岁了,性别是${this.sex}`);
+            }
+        }
+        let man=new Man('小红',20,'女');
+        man.sayHello();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
