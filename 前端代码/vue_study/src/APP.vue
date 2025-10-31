@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
 };
 </script>
 
@@ -35,7 +35,7 @@ body,
   gap: 20px;
   padding: 20px;
   background-color: #42b983;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .nav a {
   text-decoration: none;
@@ -46,10 +46,10 @@ body,
   transition: background-color 0.3s;
 }
 .nav a:hover {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .nav a.router-link-active {
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 </style>
 
