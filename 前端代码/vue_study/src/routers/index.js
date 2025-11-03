@@ -4,6 +4,10 @@ import Vue2 from '../views/mystudy/vue2/vue2.vue'
 import Vue3 from '../views/mystudy/vue3/vue3.vue'
 import common_instruction from '../views/mystudy/common_instruction.vue'
 import dad from '../views/passpara/dad.vue'
+import son from '../views/passpara/son.vue'
+
+import LogHistory from '../views/company/loghistory.vue'
+import Aidesigner from '../views/company/aidesigner.vue'
 // 定义路由
 const routes = [
   {
@@ -31,6 +35,23 @@ const routes = [
     name: 'dad',
     component: dad
   },
+  {
+    path: '/son',
+    name: 'son',
+    component: son
+  },
+
+  {
+    path: '/loghistory',
+    name: 'LogHistory',
+    component: LogHistory
+  },
+  {
+    path: '/aidesigner',
+    name: 'Aidesigner',
+    component: Aidesigner
+  }
+
 ]
 
 // 创建路由器实例

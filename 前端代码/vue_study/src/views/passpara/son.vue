@@ -1,44 +1,30 @@
 <template>
   <div>
-    <p>
-      我是{{ props.name }}，今年{{ props.age }}岁了，性别是{{
-        props.sex
-      }}，身高是{{ props.height }}cm，体重是{{ props.weight }}kg，爱好是{{
-        props.hobby
-      }}，是否是学生{{ props.isStudent }}
-    </p>
-    <button @click="emit('update:name', '李四')">修改名字</button>
-    <button @click="emit('update:age', 20)">修改年龄</button>
-    <button @click="emit('update:sex', '女')">修改性别</button>
-    <button @click="emit('update:height', 160)">修改身高</button>
-    <button @click="emit('update:weight', 50)">修改体重</button>
-    <button @click="emit('update:hobby', '篮球')">修改爱好</button>
-    <button @click="emit('update:isStudent', true)">修改是否是学生</button>
+    <!-- <p>子组件接收到父组件传参{{ props.name }},{{ props.age }}</p> -->
+    <button @click="handleClick">子传参</button>
   </div>
 </template>
 
 <script setup>
-// defineProps 是编译器宏，不需要导入
+import { ref } from "vue";
+const school = ref("清华");
+const grade = ref("2班");
+//父传子
 const props = defineProps({
-  name: String,
-  age: Number,
-  sex: String,
-  height: Number,
-  weight: Number,
-  hobby: Array,
-  isStudent: Boolean,
+  name: { String, required: true, default: "张三" },
+  age: {
+    type: Number,
+    required: false,
+    default: 18,
+  },
 });
 
-// emit实现子传父
-const emit = defineEmits([
-  "update:name",
-  "update:age",
-  "update:sex",
-  "update:height",
-  "update:weight",
-  "update:hobby",
-  "update:isStudent",
-]);
+//子传父
+const emit = defineEmits(["update"]);
+const handleClick = () => {
+  emit("update", { school, grade });
+};
+// 不要在顶层直接调用 emit，应该在用户交互时调用（如点击按钮）
 </script>
 
 <style lang="scss" scoped>
