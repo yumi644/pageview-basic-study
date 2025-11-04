@@ -48,7 +48,7 @@
 </template>
   
   <script setup>
-import { reactive, ref } from "vue";
+import { onMounted, reactive, ref } from "vue";
 import { getLogHistory } from "../../sercice/api";
 const config = reactive({
   fieldname: "用户名",
@@ -82,10 +82,10 @@ const data = ref([]);
 const model = ref([]);
 const getLogHistoryData = async () => {
   const res = await getLogHistory();
+  console.log("取值：", res);
   data.value = res.data;
   model.value = res.model;
 };
-getLogHistoryData();
 
 function handleSelect(selected) {
   selectedCount.value = selected.length;
@@ -95,6 +95,10 @@ function getSelected() {
   const selected = tableRef.value.getSelect();
   console.log("选中的数据：", selected);
 }
+onMounted(() => {
+  console.log("你好");
+  getLogHistoryData();
+});
 </script>
 
 <style scoped>
